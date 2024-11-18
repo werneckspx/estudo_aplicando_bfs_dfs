@@ -2,5 +2,5 @@
 
 Para rodar:
 
-g++ -o programa main.cpp grafo.cpp bfs.cpp
+g++ -o programa main.cpp grafo.cpp bfs.cpp <br>
 ./programa

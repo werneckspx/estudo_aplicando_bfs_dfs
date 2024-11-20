@@ -1,7 +1,6 @@
 #include "BFS.hpp"
-#include <iostream>
 
-void BFS::printPath(const vector<int>& pi, int start, int target) {
+void BFS::printPath(vector<int>& pi, int start, int target) {
     stack<int> path;
     int current = target;
         
@@ -19,10 +18,11 @@ void BFS::printPath(const vector<int>& pi, int start, int target) {
     cout << endl;
 }
 
-void BFS::executar(const Grafo& grafo, int inicial, int final) {
+void BFS::executar(Grafo& grafo, int inicial, int final) {
     int vertices = grafo.getNumVertices();
-    const auto& adj = grafo.getAdjList();
+    vector<vector<int>>& adj = grafo.getAdjList();
 
+    auto start = chrono::high_resolution_clock::now();
     vector<string> cor(vertices, "BRANCO");
     vector<int> pi(vertices, -1);
     vector<int> d(vertices, numeric_limits<int>::max());
@@ -105,4 +105,8 @@ void BFS::executar(const Grafo& grafo, int inicial, int final) {
     } else {
         cout << "Não foi possível encontrar um caminho até o nó " << final << endl;
     }
+
+    auto end = chrono::high_resolution_clock::now();
+    chrono::duration<double, milli> duration = end - start;
+    cout << "Tempo de execução: " << duration.count() << " ms" << endl;
 }

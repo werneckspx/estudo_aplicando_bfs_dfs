@@ -9,7 +9,7 @@ void Grafo::addAresta(int u, int v) {
     adj[v].push_back(u); 
 }
 
-void Grafo::imprimir() const {
+void Grafo::imprimir(){
     for (int i = 1; i < vertices; i++) {
         cout << i << " -> ";
         for (int vizinho : adj[i]) {
@@ -19,10 +19,10 @@ void Grafo::imprimir() const {
     }
 }
 
-const vector<vector<int>>& Grafo::getAdjList() const {
+vector<vector<int>>& Grafo::getAdjList(){
     return adj;
 }
 
-int Grafo::getNumVertices() const {
+int Grafo::getNumVertices(){
     return vertices;
 }

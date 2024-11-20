@@ -13,9 +13,9 @@ private:
 public:
     Grafo(int v);
     void addAresta(int u, int v);
-    void imprimir() const;
-    const vector<vector<int>>& getAdjList() const;
-    int getNumVertices() const;
+    void imprimir();
+    vector<vector<int>>& getAdjList();
+    int getNumVertices();
 };
 
 #endif

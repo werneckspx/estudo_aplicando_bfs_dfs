@@ -7,11 +7,12 @@
 #include <string>
 #include <stack>
 #include <limits>
+#include <chrono>
 
 class BFS {
 public:
-    static void executar(const Grafo& grafo, int inicial, int final);
-    static void printPath(const vector<int>& pi, int start, int target);
+    static void executar(Grafo& grafo, int inicial, int final);
+    static void printPath(vector<int>& pi, int start, int target);
 };
 
 #endif

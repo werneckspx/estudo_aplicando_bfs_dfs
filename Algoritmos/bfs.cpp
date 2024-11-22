@@ -1,6 +1,16 @@
 #include "bfs.hpp"
 #include "Fifo/fifo.hpp"
-#include "Stack/stack.hpp"
+#include <stack>
+#include <memory>
+
+// #include <stdio.h>
+// #include <sys/resource.h>
+
+// void print_memory_usage() {
+//     struct rusage usage;
+//     getrusage(RUSAGE_SELF, &usage);
+//     printf("Max Resident Set Size: %ld KB\n", usage.ru_maxrss);
+// }
 
 void BFS::executar(Grafo &grafo, int inicial, int final) {
     int vertices = grafo.getNumVertices();
@@ -30,14 +40,14 @@ void BFS::executar(Grafo &grafo, int inicial, int final) {
     d[inicial] = 0;
     pi[inicial] = -1;
 
-    Fifo fila;
-    fila.Push(inicial);
+    Fifo *fila = new Fifo();
+    fila->Push(inicial);
     bool found = false;
 
-    while (!fila.Empty() && !found) {
+    while (!fila->Empty() && !found) {
         iteracao++;
-        int u = fila.Front()->getValue();
-        fila.Pop();
+        int u = fila->Front()->getValue();
+        fila->Pop();
 
         out << "\nIteração " << iteracao << ": Analisando nó " << u << endl;
         out << "-----------------------------------" << endl;
@@ -59,7 +69,7 @@ void BFS::executar(Grafo &grafo, int inicial, int final) {
                 cor[v] = "CINZA";
                 d[v] = d[u] + 1;
                 pi[v] = u;
-                fila.Push(v);
+                fila->Push(v);
 
                 out << "    Detalhes após marcação:" << endl;
                 out << "      Nova cor: CINZA" << endl;
@@ -80,6 +90,9 @@ void BFS::executar(Grafo &grafo, int inicial, int final) {
         cor[u] = "PRETO";
         out << "\nNó " << u << " marcado como PRETO (completamente explorado)" << endl;
     }
+
+    cout << fila->Size() << endl;
+    fila->PrintMemoryUsage();
 
     auto end = chrono::high_resolution_clock::now();
     chrono::duration<double, milli> duration = end - start;
@@ -103,27 +116,25 @@ void BFS::executar(Grafo &grafo, int inicial, int final) {
     out << "ESTATÍSTICAS DE EXECUÇÃO" << endl;
     out << "================================" << endl;
     out << "Tempo de execução: " << duration.count() << " ms" << endl;
-    out << "Pico de memória: " << fila.getPicoMemoriaUsada() << " bytes" << endl;
-    out << "Memoria Usada: " << fila.getMemoriaUsada() << " bytes" << endl;
-
-
+    out << "Pico de memória: " << fila->getPicoMemoriaUsada() << " bytes" << endl;
+    out << "Memoria Usada: " << fila->getMemoriaUsada() << " bytes" << endl;
 
     out.close();
 }
 
 void BFS::printPath(vector<int> &pi, int target, ofstream &out) {
-    Stack path;
+    stack<int> path;
     int current = target;
 
     while (current != -1) {
-        path.Push(current);
+        path.push(current);
         current = pi[current];
     }
 
-    while (!path.Empty()) {
-        out << path.Top()->getValue();
-        path.Pop();
-        if (!path.Empty()) out << " -> ";
+    while (!path.empty()) {
+        out << path.top();
+        path.pop();
+        if (!path.empty()) out << " -> ";
     }
     out << endl;
 }

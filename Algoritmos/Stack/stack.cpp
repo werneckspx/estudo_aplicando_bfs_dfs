@@ -16,6 +16,7 @@ void Stack::Push(int d) {
     }
 
     top = aux;
+    size++;
 }
 
 void Stack::Pop() {
@@ -28,8 +29,19 @@ void Stack::Pop() {
 
     delete aux;
     memoriaUsada -= sizeof(StackNode);
+    size--;
 }
 
 StackNode *Stack::Top() {
     return top;
+}
+
+int Stack::Size() const {
+    return size;
+}
+
+void Stack::PrintMemoryUsage() {
+    if (top) {
+        top->printTotalMemoryAllocated();
+    }
 }

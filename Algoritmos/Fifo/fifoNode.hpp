@@ -10,6 +10,11 @@ public:
     int getValue() const;
     FifoNode *getNext();
     void setNext(FifoNode *node);
+
+    void printTotalMemoryAllocated();
+
+    void *operator new(std::size_t size);
+    void operator delete(void *ptr) noexcept;
 private:
     int value;
     FifoNode *next;

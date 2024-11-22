@@ -23,6 +23,8 @@ void Fifo::Push(int value) {
     if (!front) {
         front = end;
     }
+
+    size++;
 }
 
 void Fifo::Pop() {
@@ -39,8 +41,19 @@ void Fifo::Pop() {
 
     delete temp;
     memoriaUsada -= sizeof(FifoNode);
+    size--;
 }
 
 FifoNode *Fifo::Front() {
     return front;
+}
+
+int Fifo::Size() const {
+    return size;
+}
+
+void Fifo::PrintMemoryUsage() {
+    if (front) {
+        front->printTotalMemoryAllocated();
+    }
 }

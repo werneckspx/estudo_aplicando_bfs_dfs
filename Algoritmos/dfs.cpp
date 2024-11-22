@@ -4,6 +4,7 @@
 #include <stack>
 #include <limits>
 #include <chrono>
+#include <memory>
 
 void DFS::executar(Grafo &grafo, int inicial, int final) {
     int vertices = grafo.getNumVertices();
@@ -76,6 +77,9 @@ void DFS::executar(Grafo &grafo, int inicial, int final) {
         out << "  Nó " << u << " visitado!" << endl;
     }
 
+    cout << pilha->Size() << endl;
+    pilha->PrintMemoryUsage();
+
     auto end = chrono::high_resolution_clock::now();
     chrono::duration<double, milli> duration = end - start;
 
@@ -103,18 +107,18 @@ void DFS::executar(Grafo &grafo, int inicial, int final) {
 }
 
 void DFS::printPath(vector<int> &pi, int target, ofstream &out) {
-    Stack path;
+    stack<int> path;
     int current = target;
 
     while (current != -1) {
-        path.Push(current);
+        path.push(current);
         current = pi[current];
     }
 
-    while (!path.Empty()) {
-        out << path.Top()->getValue();
-        path.Pop();
-        if (!path.Empty()) out << " -> ";
+    while (!path.empty()) {
+        out << path.top();
+        path.pop();
+        if (!path.empty()) out << " -> ";
     }
     out << endl;
 }

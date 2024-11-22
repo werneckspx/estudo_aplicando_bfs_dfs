@@ -11,13 +11,14 @@ INCLUDE  := -I. -IAlgoritmos -IAlgoritmos/Stack -IAlgoritmos/Fifo -IGrafo
 
 # Lista todos os arquivos fonte
 SRC      := src/main.cpp \
-            Algoritmos/bfs.cpp \
+			Algoritmos/bfs.cpp \
             Algoritmos/dfs.cpp \
             Algoritmos/Stack/stack.cpp \
             Algoritmos/Stack/stackNode.cpp \
             Algoritmos/Fifo/fifo.cpp \
             Algoritmos/Fifo/fifoNode.cpp \
-            Grafo/grafo.cpp
+			Grafo/grafo.cpp
+            
 
 # Converte os caminhos dos arquivos fonte para objetos
 OBJECTS  := $(SRC:%.cpp=$(OBJ_DIR)/%.o)

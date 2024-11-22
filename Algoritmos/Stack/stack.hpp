@@ -21,6 +21,10 @@ public:
 
     StackNode *Top();
 
+    int Size() const;
+
+    void PrintMemoryUsage();
+
     size_t getMemoriaUsada() const { return memoriaUsada; }
     size_t getPicoMemoriaUsada() const { return picoMemoriaUsada; }
 private:
@@ -28,6 +32,7 @@ private:
 
     size_t memoriaUsada = 0;
     size_t picoMemoriaUsada = 0;
+    size_t size = 0;
 };
 
 #endif

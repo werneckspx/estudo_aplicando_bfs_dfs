@@ -103,6 +103,10 @@ void BFS::executar(Grafo &grafo, int inicial, int final) {
     out << "ESTATÍSTICAS DE EXECUÇÃO" << endl;
     out << "================================" << endl;
     out << "Tempo de execução: " << duration.count() << " ms" << endl;
+    out << "Pico de memória: " << fila.getPicoMemoriaUsada() << " bytes" << endl;
+    out << "Memoria Usada: " << fila.getMemoriaUsada() << " bytes" << endl;
+
+
 
     out.close();
 }

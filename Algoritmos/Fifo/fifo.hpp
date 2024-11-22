@@ -20,9 +20,15 @@ public:
     void Pop();
 
     bool Empty() const;
+
+    size_t getMemoriaUsada() const { return memoriaUsada; }
+    size_t getPicoMemoriaUsada() const { return picoMemoriaUsada; }
 private:
     FifoNode *front;
     FifoNode *end;
+
+    size_t memoriaUsada = 0;
+    size_t picoMemoriaUsada = 0;
 };
 
 #endif

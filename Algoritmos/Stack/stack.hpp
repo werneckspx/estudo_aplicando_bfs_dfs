@@ -20,8 +20,14 @@ public:
     void Pop();
 
     StackNode *Top();
+
+    size_t getMemoriaUsada() const { return memoriaUsada; }
+    size_t getPicoMemoriaUsada() const { return picoMemoriaUsada; }
 private:
     StackNode *top;
+
+    size_t memoriaUsada = 0;
+    size_t picoMemoriaUsada = 0;
 };
 
 #endif

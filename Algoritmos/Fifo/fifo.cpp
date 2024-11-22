@@ -1,6 +1,7 @@
 #include "fifo.hpp"
+#include <iostream>
 
-Fifo::Fifo() : front(nullptr), end(nullptr) { }
+Fifo::Fifo() : front(nullptr), end(nullptr), memoriaUsada(0), picoMemoriaUsada(0) { }
 
 bool Fifo::Empty() const {
     return front == nullptr;
@@ -8,6 +9,12 @@ bool Fifo::Empty() const {
 
 void Fifo::Push(int value) {
     FifoNode *newNode = new FifoNode(value);
+    memoriaUsada += sizeof(FifoNode);
+
+    if (memoriaUsada > picoMemoriaUsada) {
+        picoMemoriaUsada = memoriaUsada;
+    }
+
     if (end) {
         end->setNext(newNode);
     }
@@ -31,6 +38,7 @@ void Fifo::Pop() {
     }
 
     delete temp;
+    memoriaUsada -= sizeof(FifoNode);
 }
 
 FifoNode *Fifo::Front() {

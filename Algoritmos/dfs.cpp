@@ -96,6 +96,8 @@ void DFS::executar(Grafo &grafo, int inicial, int final) {
     out << "ESTATÍSTICAS DE EXECUÇÃO" << endl;
     out << "================================" << endl;
     out << "Tempo de execução: " << duration.count() << " ms" << endl;
+    out << "Pico de memória: " << pilha->getPicoMemoriaUsada() << " bytes" << endl;
+    out << "Memoria Usada: " << pilha->getMemoriaUsada() << " bytes" << endl;
 
     out.close();
 }

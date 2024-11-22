@@ -471,4 +471,6 @@ CAMINHO ENCONTRADO:
 ================================
 ESTATÍSTICAS DE EXECUÇÃO
 ================================
-Tempo de execução: 1.99312 ms
+Tempo de execução: 1.97202 ms
+Pico de memória: 64 bytes
+Memoria Usada: 32 bytes

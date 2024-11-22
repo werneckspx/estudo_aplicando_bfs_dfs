@@ -27,9 +27,11 @@ public:
 
     size_t getMemoriaUsada() const { return memoriaUsada; }
     size_t getPicoMemoriaUsada() const { return picoMemoriaUsada; }
+    size_t getMemoriaTotal() const { return memoriaTotal*sizeof(StackNode); }
 private:
     StackNode *top;
 
+    size_t memoriaTotal = 0;
     size_t memoriaUsada = 0;
     size_t picoMemoriaUsada = 0;
     size_t size = 0;

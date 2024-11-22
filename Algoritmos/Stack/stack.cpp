@@ -17,6 +17,10 @@ void Stack::Push(int d) {
 
     top = aux;
     size++;
+
+    if(memoriaTotal < size){
+        memoriaTotal = size;
+    }
 }
 
 void Stack::Pop() {

@@ -169,6 +169,7 @@ CAMINHO ENCONTRADO: 21 -> 22 -> 17 -> 12 -> 13 -> 14 -> 9 -> 8 -> 3 -> 4 -> 5
 ================================
 ESTATÍSTICAS DE EXECUÇÃO
 ================================
-Tempo de execução: 0.874497 ms
+Tempo de execução: 27.3142 ms
 Pico de memória: 64 bytes
 Memoria Usada: 48 bytes
+Memoria Total: 64 bytes

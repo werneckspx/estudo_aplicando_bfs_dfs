@@ -47,7 +47,6 @@ void BFS::executar(Grafo &grafo, int inicial, int final) {
     while (!fila->Empty() && !found) {
         iteracao++;
         int u = fila->Front()->getValue();
-        fila->Pop();
 
         out << "\nIteração " << iteracao << ": Analisando nó " << u << endl;
         out << "-----------------------------------" << endl;
@@ -86,6 +85,7 @@ void BFS::executar(Grafo &grafo, int inicial, int final) {
                     << (cor[v] == "CINZA" ? "CINZA" : "PRETO") << ")" << endl;
             }
         }
+        fila->Pop();
 
         cor[u] = "PRETO";
         out << "\nNó " << u << " marcado como PRETO (completamente explorado)" << endl;
@@ -118,7 +118,8 @@ void BFS::executar(Grafo &grafo, int inicial, int final) {
     out << "Tempo de execução: " << duration.count() << " ms" << endl;
     out << "Pico de memória: " << fila->getPicoMemoriaUsada() << " bytes" << endl;
     out << "Memoria Usada: " << fila->getMemoriaUsada() << " bytes" << endl;
-
+    out << "Memoria Total: " << fila->getMemoriaTotal() << " bytes" << endl;
+    
     out.close();
 }
 

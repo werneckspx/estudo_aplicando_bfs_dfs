@@ -25,6 +25,10 @@ void Fifo::Push(int value) {
     }
 
     size++;
+    
+    if(memoriaTotal < size){
+        memoriaTotal = size;
+    }
 }
 
 void Fifo::Pop() {

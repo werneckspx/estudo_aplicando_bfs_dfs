@@ -1,0 +1,474 @@
+================================
+INÍCIO DA BUSCA EM LARGURA (BFS)
+================================
+Nó Inicial: 21
+Nó Final: 5
+================================
+
+Iteração 1: Analisando nó 21
+-----------------------------------
+Estado atual do nó 21:
+  Cor: CINZA
+  Distância da origem: 0
+  Predecessor: -1
+
+Vizinhos do nó 21:
+
+  Explorando vizinho: 22
+    Status: NÃO VISITADO
+    Ação: Marcando para exploração
+    Detalhes após marcação:
+      Nova cor: CINZA
+      Distância: 1
+      Predecessor: 21
+
+  Explorando vizinho: 16
+    Status: NÃO VISITADO
+    Ação: Marcando para exploração
+    Detalhes após marcação:
+      Nova cor: CINZA
+      Distância: 1
+      Predecessor: 21
+
+Nó 21 marcado como PRETO (completamente explorado)
+
+Iteração 2: Analisando nó 22
+-----------------------------------
+Estado atual do nó 22:
+  Cor: CINZA
+  Distância da origem: 1
+  Predecessor: 21
+
+Vizinhos do nó 22:
+
+  Explorando vizinho: 21
+    Status: JÁ VISITADO (Cor: PRETO)
+
+  Explorando vizinho: 23
+    Status: NÃO VISITADO
+    Ação: Marcando para exploração
+    Detalhes após marcação:
+      Nova cor: CINZA
+      Distância: 2
+      Predecessor: 22
+
+  Explorando vizinho: 17
+    Status: NÃO VISITADO
+    Ação: Marcando para exploração
+    Detalhes após marcação:
+      Nova cor: CINZA
+      Distância: 2
+      Predecessor: 22
+
+Nó 22 marcado como PRETO (completamente explorado)
+
+Iteração 3: Analisando nó 16
+-----------------------------------
+Estado atual do nó 16:
+  Cor: CINZA
+  Distância da origem: 1
+  Predecessor: 21
+
+Vizinhos do nó 16:
+
+  Explorando vizinho: 21
+    Status: JÁ VISITADO (Cor: PRETO)
+
+  Explorando vizinho: 11
+    Status: NÃO VISITADO
+    Ação: Marcando para exploração
+    Detalhes após marcação:
+      Nova cor: CINZA
+      Distância: 2
+      Predecessor: 16
+
+Nó 16 marcado como PRETO (completamente explorado)
+
+Iteração 4: Analisando nó 23
+-----------------------------------
+Estado atual do nó 23:
+  Cor: CINZA
+  Distância da origem: 2
+  Predecessor: 22
+
+Vizinhos do nó 23:
+
+  Explorando vizinho: 22
+    Status: JÁ VISITADO (Cor: PRETO)
+
+  Explorando vizinho: 24
+    Status: NÃO VISITADO
+    Ação: Marcando para exploração
+    Detalhes após marcação:
+      Nova cor: CINZA
+      Distância: 3
+      Predecessor: 23
+
+Nó 23 marcado como PRETO (completamente explorado)
+
+Iteração 5: Analisando nó 17
+-----------------------------------
+Estado atual do nó 17:
+  Cor: CINZA
+  Distância da origem: 2
+  Predecessor: 22
+
+Vizinhos do nó 17:
+
+  Explorando vizinho: 22
+    Status: JÁ VISITADO (Cor: PRETO)
+
+  Explorando vizinho: 12
+    Status: NÃO VISITADO
+    Ação: Marcando para exploração
+    Detalhes após marcação:
+      Nova cor: CINZA
+      Distância: 3
+      Predecessor: 17
+
+Nó 17 marcado como PRETO (completamente explorado)
+
+Iteração 6: Analisando nó 11
+-----------------------------------
+Estado atual do nó 11:
+  Cor: CINZA
+  Distância da origem: 2
+  Predecessor: 16
+
+Vizinhos do nó 11:
+
+  Explorando vizinho: 16
+    Status: JÁ VISITADO (Cor: PRETO)
+
+Nó 11 marcado como PRETO (completamente explorado)
+
+Iteração 7: Analisando nó 24
+-----------------------------------
+Estado atual do nó 24:
+  Cor: CINZA
+  Distância da origem: 3
+  Predecessor: 23
+
+Vizinhos do nó 24:
+
+  Explorando vizinho: 23
+    Status: JÁ VISITADO (Cor: PRETO)
+
+  Explorando vizinho: 25
+    Status: NÃO VISITADO
+    Ação: Marcando para exploração
+    Detalhes após marcação:
+      Nova cor: CINZA
+      Distância: 4
+      Predecessor: 24
+
+Nó 24 marcado como PRETO (completamente explorado)
+
+Iteração 8: Analisando nó 12
+-----------------------------------
+Estado atual do nó 12:
+  Cor: CINZA
+  Distância da origem: 3
+  Predecessor: 17
+
+Vizinhos do nó 12:
+
+  Explorando vizinho: 17
+    Status: JÁ VISITADO (Cor: PRETO)
+
+  Explorando vizinho: 13
+    Status: NÃO VISITADO
+    Ação: Marcando para exploração
+    Detalhes após marcação:
+      Nova cor: CINZA
+      Distância: 4
+      Predecessor: 12
+
+Nó 12 marcado como PRETO (completamente explorado)
+
+Iteração 9: Analisando nó 25
+-----------------------------------
+Estado atual do nó 25:
+  Cor: CINZA
+  Distância da origem: 4
+  Predecessor: 24
+
+Vizinhos do nó 25:
+
+  Explorando vizinho: 24
+    Status: JÁ VISITADO (Cor: PRETO)
+
+  Explorando vizinho: 20
+    Status: NÃO VISITADO
+    Ação: Marcando para exploração
+    Detalhes após marcação:
+      Nova cor: CINZA
+      Distância: 5
+      Predecessor: 25
+
+Nó 25 marcado como PRETO (completamente explorado)
+
+Iteração 10: Analisando nó 13
+-----------------------------------
+Estado atual do nó 13:
+  Cor: CINZA
+  Distância da origem: 4
+  Predecessor: 12
+
+Vizinhos do nó 13:
+
+  Explorando vizinho: 12
+    Status: JÁ VISITADO (Cor: PRETO)
+
+  Explorando vizinho: 14
+    Status: NÃO VISITADO
+    Ação: Marcando para exploração
+    Detalhes após marcação:
+      Nova cor: CINZA
+      Distância: 5
+      Predecessor: 13
+
+  Explorando vizinho: 18
+    Status: NÃO VISITADO
+    Ação: Marcando para exploração
+    Detalhes após marcação:
+      Nova cor: CINZA
+      Distância: 5
+      Predecessor: 13
+
+Nó 13 marcado como PRETO (completamente explorado)
+
+Iteração 11: Analisando nó 20
+-----------------------------------
+Estado atual do nó 20:
+  Cor: CINZA
+  Distância da origem: 5
+  Predecessor: 25
+
+Vizinhos do nó 20:
+
+  Explorando vizinho: 25
+    Status: JÁ VISITADO (Cor: PRETO)
+
+  Explorando vizinho: 19
+    Status: NÃO VISITADO
+    Ação: Marcando para exploração
+    Detalhes após marcação:
+      Nova cor: CINZA
+      Distância: 6
+      Predecessor: 20
+
+Nó 20 marcado como PRETO (completamente explorado)
+
+Iteração 12: Analisando nó 14
+-----------------------------------
+Estado atual do nó 14:
+  Cor: CINZA
+  Distância da origem: 5
+  Predecessor: 13
+
+Vizinhos do nó 14:
+
+  Explorando vizinho: 13
+    Status: JÁ VISITADO (Cor: PRETO)
+
+  Explorando vizinho: 15
+    Status: NÃO VISITADO
+    Ação: Marcando para exploração
+    Detalhes após marcação:
+      Nova cor: CINZA
+      Distância: 6
+      Predecessor: 14
+
+  Explorando vizinho: 9
+    Status: NÃO VISITADO
+    Ação: Marcando para exploração
+    Detalhes após marcação:
+      Nova cor: CINZA
+      Distância: 6
+      Predecessor: 14
+
+Nó 14 marcado como PRETO (completamente explorado)
+
+Iteração 13: Analisando nó 18
+-----------------------------------
+Estado atual do nó 18:
+  Cor: CINZA
+  Distância da origem: 5
+  Predecessor: 13
+
+Vizinhos do nó 18:
+
+  Explorando vizinho: 13
+    Status: JÁ VISITADO (Cor: PRETO)
+
+  Explorando vizinho: 19
+    Status: JÁ VISITADO (Cor: CINZA)
+
+Nó 18 marcado como PRETO (completamente explorado)
+
+Iteração 14: Analisando nó 19
+-----------------------------------
+Estado atual do nó 19:
+  Cor: CINZA
+  Distância da origem: 6
+  Predecessor: 20
+
+Vizinhos do nó 19:
+
+  Explorando vizinho: 18
+    Status: JÁ VISITADO (Cor: PRETO)
+
+  Explorando vizinho: 20
+    Status: JÁ VISITADO (Cor: PRETO)
+
+Nó 19 marcado como PRETO (completamente explorado)
+
+Iteração 15: Analisando nó 15
+-----------------------------------
+Estado atual do nó 15:
+  Cor: CINZA
+  Distância da origem: 6
+  Predecessor: 14
+
+Vizinhos do nó 15:
+
+  Explorando vizinho: 14
+    Status: JÁ VISITADO (Cor: PRETO)
+
+Nó 15 marcado como PRETO (completamente explorado)
+
+Iteração 16: Analisando nó 9
+-----------------------------------
+Estado atual do nó 9:
+  Cor: CINZA
+  Distância da origem: 6
+  Predecessor: 14
+
+Vizinhos do nó 9:
+
+  Explorando vizinho: 14
+    Status: JÁ VISITADO (Cor: PRETO)
+
+  Explorando vizinho: 8
+    Status: NÃO VISITADO
+    Ação: Marcando para exploração
+    Detalhes após marcação:
+      Nova cor: CINZA
+      Distância: 7
+      Predecessor: 9
+
+Nó 9 marcado como PRETO (completamente explorado)
+
+Iteração 17: Analisando nó 8
+-----------------------------------
+Estado atual do nó 8:
+  Cor: CINZA
+  Distância da origem: 7
+  Predecessor: 9
+
+Vizinhos do nó 8:
+
+  Explorando vizinho: 9
+    Status: JÁ VISITADO (Cor: PRETO)
+
+  Explorando vizinho: 3
+    Status: NÃO VISITADO
+    Ação: Marcando para exploração
+    Detalhes após marcação:
+      Nova cor: CINZA
+      Distância: 8
+      Predecessor: 8
+
+  Explorando vizinho: 7
+    Status: NÃO VISITADO
+    Ação: Marcando para exploração
+    Detalhes após marcação:
+      Nova cor: CINZA
+      Distância: 8
+      Predecessor: 8
+
+Nó 8 marcado como PRETO (completamente explorado)
+
+Iteração 18: Analisando nó 3
+-----------------------------------
+Estado atual do nó 3:
+  Cor: CINZA
+  Distância da origem: 8
+  Predecessor: 8
+
+Vizinhos do nó 3:
+
+  Explorando vizinho: 8
+    Status: JÁ VISITADO (Cor: PRETO)
+
+  Explorando vizinho: 4
+    Status: NÃO VISITADO
+    Ação: Marcando para exploração
+    Detalhes após marcação:
+      Nova cor: CINZA
+      Distância: 9
+      Predecessor: 3
+
+Nó 3 marcado como PRETO (completamente explorado)
+
+Iteração 19: Analisando nó 7
+-----------------------------------
+Estado atual do nó 7:
+  Cor: CINZA
+  Distância da origem: 8
+  Predecessor: 8
+
+Vizinhos do nó 7:
+
+  Explorando vizinho: 8
+    Status: JÁ VISITADO (Cor: PRETO)
+
+  Explorando vizinho: 6
+    Status: NÃO VISITADO
+    Ação: Marcando para exploração
+    Detalhes após marcação:
+      Nova cor: CINZA
+      Distância: 9
+      Predecessor: 7
+
+Nó 7 marcado como PRETO (completamente explorado)
+
+Iteração 20: Analisando nó 4
+-----------------------------------
+Estado atual do nó 4:
+  Cor: CINZA
+  Distância da origem: 9
+  Predecessor: 3
+
+Vizinhos do nó 4:
+
+  Explorando vizinho: 3
+    Status: JÁ VISITADO (Cor: PRETO)
+
+  Explorando vizinho: 5
+    Status: NÃO VISITADO
+    Ação: Marcando para exploração
+    Detalhes após marcação:
+      Nova cor: CINZA
+      Distância: 10
+      Predecessor: 4
+
+  *** NÓ FINAL ENCONTRADO! ***
+
+Nó 4 marcado como PRETO (completamente explorado)
+
+================================
+RESUMO DA BUSCA
+================================
+
+Nó 5 encontrado!
+Distância do nó 21 até o nó 5: 10
+
+CAMINHO ENCONTRADO:
+21 -> 22 -> 17 -> 12 -> 13 -> 14 -> 9 -> 8 -> 3 -> 4 -> 5
+
+================================
+ESTATÍSTICAS DE EXECUÇÃO
+================================
+Tempo de execução: 1.99312 ms

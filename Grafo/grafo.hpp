@@ -7,14 +7,15 @@ using namespace std;
 
 class Grafo {
 private:
+    void addAresta(int u, int v);
+
     int vertices;
     vector<vector<int>> adj;
 
 public:
     Grafo(int v);
-    void addAresta(int u, int v);
     void imprimir();
-    vector<vector<int>>& getAdjList();
+    vector<vector<int>> &getAdjList();
     int getNumVertices();
 };
 

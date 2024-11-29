@@ -58,10 +58,41 @@ Já a análise da DFS mostra que, para espaços de estados finitos é eficiente 
 
 Nesta etapa será visualizado o tempo gasto por cada algoritmo pra completar o objetivo e a memoria utilizada. Nos testes realizados, o algoritmo DFS tende a ter melhor performance, apresentando menor tempo gasto e menor consumo de memória.
 
-|Algoritmo|Tempo de execução|Consumo de memória|
-|---------|-----------------|------------------|
-|DFS|29 ms|64 bytes|
-|BFS|70 ms|80 bytes|
+#### BFS
+
+| Execução | Tempo de Execução (ms) | Memória Usada (bytes) |
+|----------|-------------------------|-----------------------|
+| 1        | 40.1414                | 80                    |
+| 2        | 45.0311                | 80                    |
+| 3        | 39.7616                | 80                    |
+| 4        | 45.2823                | 80                    |
+| 5        | 43.3294                | 80                    |
+| 6        | 44.7546                | 80                    |
+| 7        | 48.9619                | 80                    |
+| 8        | 43.9959                | 80                    |
+| 9        | 45.7866                | 80                    |
+| 10       | 40.3562                | 80                    |
+| **Média**| **43.9401**            | **80**                |
+
+---
+
+#### DFS
+
+| Execução | Tempo de Execução (ms) | Memória Usada (bytes) |
+|----------|-------------------------|-----------------------|
+| 1        | 17.6397                | 64                    |
+| 2        | 17.4939                | 64                    |
+| 3        | 17.4542                | 64                    |
+| 4        | 17.3467                | 64                    |
+| 5        | 15.8473                | 64                    |
+| 6        | 17.6435                | 64                    |
+| 7        | 18.2479                | 64                    |
+| 8        | 18.2099                | 64                    |
+| 9        | 17.5320                | 64                    |
+| 10       | 17.2292                | 64                    |
+| **Média**| **17.4644**            | **64**                |
+
+---
 
 É válido ressaltar, que para alguns problemas que exigiriam exabytes($10^{18}$) de memória nas busca em largura podem ser tratados com apenas kilobytes($10^{3}$) usando a busca em profundidade.
 
@@ -73,8 +104,7 @@ Para o algoritmo DFS, poderia ser aplicada uma melhoria que utiliza menos memór
 
 ## Conclusão
 
-A escolha entre BFS e DFS para um problema depende de vários fatores, como a estrutura e o tamanho do grafo, a localização e o número dos nós de interesse, o tipo e a complexidade do problema e as restrições de memória e tempo. Por exemplo, se o grafo for esparso e grande, e os nós estiverem distantes, o DFS pode ser mais eficiente do que o BFS. Por outro lado, se o problema exigir encontrar o caminho mais curto ou o nó mais próximo, o BFS pode ser mais adequado do que o DFS. Além disso, se a memória for limitada e o tempo for flexível, o DFS pode ser mais preferível do que o BFS. Logo, as compensações entre memória e tempo devem ser levadas em consideração ao decidir qual algoritmo usar.
-[[1]](https://www.linkedin.com/advice/0/how-do-you-compare-contrast-bfs-dfs-graph-traversal?lang=pt&originalSubdomain=pt)
+A escolha entre BFS e DFS para um problema depende de vários fatores, como a estrutura e o tamanho do grafo, a localização e o número dos nós de interesse, o tipo e a complexidade do problema e as restrições de memória e tempo. BFS é preferível para encontrar caminhos mais curtos ou soluções ótimas, desde que a memória disponível seja suficiente. DFS é mais indicado quando o consumo de memória é uma restrição crítica, mesmo que a solução encontrada não seja a de menor custo. No contexto de exploração de labirintos, a DFS mostrou-se uma abordagem eficiente, mas para aplicações onde a completude e a otimalidade são críticas, o BFS pode ser mais adequado, desde que melhorias sejam implementadas para otimizar seu desempenho.
 
 ## Compilação e Execução
 

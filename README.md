@@ -4,14 +4,14 @@ Os algoritmos análisados neste trabalho sao algoritmos de busca sem informaçã
 
 ## BFS:
 
-A busca em largura BFS, é um algoritmo utilizado para percorrer ou buscar em uma estrutura de dados que pode ser representada como um grafo ou uma árvore. Nesse algoritmo, a exploração começa no vértice ou nó raiz e se expande gradualmente para os vértices ou nós vizinhos de forma nivelada, ou seja, explora todos os vértices vizinhos de um determinado nível antes de avançar para o próximo nível. Durante a busca em largura, um conjunto de vértices ou nós visitados é mantido para garantir que cada vértice seja visitado apenas uma vez. O processo de ações realizadas é baseado na coloração dos nós para demonstrar o nós já visitados (preto), visualizados (cinza) e não visualizados (branco), assim o algoritmo classifica os nós vizinhos do nó atual e sendo controlado por uma fila processa as condições necessárias. 
+A busca em largura BFS, é um algoritmo utilizado para percorrer ou buscar em uma estrutura de dados que pode ser representada como um grafo ou uma árvore. Nesse algoritmo, a exploração começa no vértice ou nó raiz e se expande gradualmente para os vértices ou nós vizinhos de forma nivelada, ou seja, explora todos os vértices vizinhos de um determinado nível antes de avançar para o próximo nível. Durante a busca em largura, um conjunto de vértices ou nós visitados é armazenado para garantir que cada vértice seja visitado apenas uma vez. O processo de ações realizadas é baseado na coloração dos nós para demonstrar o nós já visitados (preto), visualizados (cinza) e não visualizados (branco), assim o algoritmo classifica os nós vizinhos do nó atual e sendo controlado por uma fila processa as condições necessárias. 
 
 > **OBS:** a implementação está no arquivo ```bfs.cpp```.
 
 ## DFS:
-Na busca em profundidade DFS a exploração também começa a partir de um vértice ou nó raiz e, ao contrário da busca em largura, a exploração se aprofunda em cada caminho até o final (vértice folha ou nó terminal) antes de voltar e explorar outros caminhos. Ou seja, o algoritmo explora recursivamente(ou usando uma pilha) cada vértice vizinho até que não haja mais vértices não visitados em um determinado caminho, e então retorna para explorar outros caminhos.
+Na busca em profundidade DFS a exploração também começa a partir de um vértice ou nó raiz e, ao contrário da busca em largura, a exploração se aprofunda em cada caminho até o final (vértice folha ou nó terminal) antes de voltar e explorar outros caminhos. Ou seja, o algoritmo explora recursivamente(ou usando uma pilha) cada vértice vizinho até que não haja mais vértices não visitados em um determinado caminho, e então retorna para explorar outros caminhos se necessário.
 
-Durante a busca em profundidade, um conjunto de vértices ou nós visitados é mantido para garantir que cada vértice seja visitado apenas uma vez. O DFS implementado é controlado por uma pilha, onde o nó atual é empilhado e seus vizinhos são empilhados um a um até atingir um nó sem mais vizinhos para explorar, retornando então para os nós anteriores. A pilha mantém o controle da ordem de exploração.
+Durante a busca em profundidade, um conjunto de vértices ou nós visitados é armazenado para garantir que cada vértice seja visitado apenas uma vez. O DFS implementado é controlado por uma pilha, onde o nó atual é empilhado e seus vizinhos são empilhados um a um até atingir um nó sem mais vizinhos para explorar, retornando então para os nós anteriores. A pilha mantém o controle da ordem de exploração.
 
 > **OBS:** a implementação está no arquivo ```dfs.cpp```.
 
@@ -63,7 +63,7 @@ Nesta etapa será visualizado o tempo gasto por cada algoritmo pra completar o o
 |DFS|29 ms|64 bytes|
 |BFS|70 ms|80 bytes|
 
-É válido ressaltar, que para alguns problemas que exigiriam exabytes de memória nas busca em largura podem ser tratados com apenas kilobytes usando a busca em profundidade.
+É válido ressaltar, que para alguns problemas que exigiriam exabytes($10^{18}$) de memória nas busca em largura podem ser tratados com apenas kilobytes($10^{3}$) usando a busca em profundidade.
 
 ## Possíveis melhorias
 
@@ -73,8 +73,9 @@ Para o algoritmo DFS, poderia ser aplicada uma melhoria que utiliza menos memór
 
 ## Conclusão
 
-A escolha entre BFS e DFS para um problema depende de vários fatores, como a estrutura e o tamanho do gráfico, a localização e o número dos nós de interesse, o tipo e a complexidade do problema e as restrições de memória e tempo. Por exemplo, se o gráfico for esparso e grande, e os nós estiverem distantes, o DFS pode ser mais eficiente do que o BFS. Por outro lado, se o problema exigir encontrar o caminho mais curto ou o nó mais próximo, o BFS pode ser mais adequado do que o DFS. Além disso, se a memória for limitada e o tempo for flexível, o DFS pode ser mais preferível do que o BFS. Logo, as compensações entre memória e tempo devem ser levadas em consideração ao decidir qual algoritmo usar.
-%https://www.linkedin.com/advice/0/how-do-you-compare-contrast-bfs-dfs-graph-traversal?lang=pt&originalSubdomain=pt
+A escolha entre BFS e DFS para um problema depende de vários fatores, como a estrutura e o tamanho do grafo, a localização e o número dos nós de interesse, o tipo e a complexidade do problema e as restrições de memória e tempo. Por exemplo, se o grafo for esparso e grande, e os nós estiverem distantes, o DFS pode ser mais eficiente do que o BFS. Por outro lado, se o problema exigir encontrar o caminho mais curto ou o nó mais próximo, o BFS pode ser mais adequado do que o DFS. Além disso, se a memória for limitada e o tempo for flexível, o DFS pode ser mais preferível do que o BFS. Logo, as compensações entre memória e tempo devem ser levadas em consideração ao decidir qual algoritmo usar.
+[[1]](https://www.linkedin.com/advice/0/how-do-you-compare-contrast-bfs-dfs-graph-traversal?lang=pt&originalSubdomain=pt)
+
 ## Compilação e Execução
 
 <div align="justify">

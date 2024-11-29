@@ -1,7 +1,7 @@
 #include "fifo.hpp"
 #include <iostream>
 
-Fifo::Fifo() : front(nullptr), end(nullptr), memoriaUsada(0), picoMemoriaUsada(0) { }
+Fifo::Fifo() : front(nullptr), end(nullptr) { }
 
 bool Fifo::Empty() const {
     return front == nullptr;
@@ -25,10 +25,6 @@ void Fifo::Push(int value) {
     }
 
     size++;
-    
-    if(memoriaTotal < size){
-        memoriaTotal = size;
-    }
 }
 
 void Fifo::Pop() {
@@ -56,8 +52,3 @@ int Fifo::Size() const {
     return size;
 }
 
-void Fifo::PrintMemoryUsage() {
-    if (front) {
-        front->printTotalMemoryAllocated();
-    }
-}

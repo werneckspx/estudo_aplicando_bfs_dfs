@@ -1,7 +1,7 @@
 #include "stack.hpp"
 #include <iostream>
 
-Stack::Stack() : top(nullptr), memoriaUsada(0), picoMemoriaUsada(0) { }
+Stack::Stack() : top(nullptr) { }
 
 bool Stack::Empty() {
     return top == nullptr;
@@ -17,10 +17,6 @@ void Stack::Push(int d) {
 
     top = aux;
     size++;
-
-    if(memoriaTotal < size){
-        memoriaTotal = size;
-    }
 }
 
 void Stack::Pop() {
@@ -44,8 +40,3 @@ int Stack::Size() const {
     return size;
 }
 
-void Stack::PrintMemoryUsage() {
-    if (top) {
-        top->printTotalMemoryAllocated();
-    }
-}

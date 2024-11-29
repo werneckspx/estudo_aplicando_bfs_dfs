@@ -23,18 +23,13 @@ public:
 
     int Size() const;
 
-    void PrintMemoryUsage();
-
-    size_t getMemoriaUsada() const { return memoriaUsada; }
-    size_t getPicoMemoriaUsada() const { return picoMemoriaUsada; }
-    size_t getMemoriaTotal() const { return memoriaTotal*sizeof(FifoNode); }
+    size_t GetMemoriaTotalUsada() const { return picoMemoriaUsada; }
 private:
     FifoNode *front;
     FifoNode *end;
 
-    size_t memoriaTotal = 0;
-    size_t memoriaUsada = 0;
     size_t picoMemoriaUsada = 0;
+    size_t memoriaUsada = 0;
     size_t size = 0;
 };
 

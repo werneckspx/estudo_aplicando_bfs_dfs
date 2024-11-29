@@ -3,15 +3,6 @@
 #include <stack>
 #include <memory>
 
-// #include <stdio.h>
-// #include <sys/resource.h>
-
-// void print_memory_usage() {
-//     struct rusage usage;
-//     getrusage(RUSAGE_SELF, &usage);
-//     printf("Max Resident Set Size: %ld KB\n", usage.ru_maxrss);
-// }
-
 void BFS::executar(Grafo &grafo, int inicial, int final) {
     int vertices = grafo.getNumVertices();
     vector<vector<int>> &adj = grafo.getAdjList();
@@ -91,9 +82,6 @@ void BFS::executar(Grafo &grafo, int inicial, int final) {
         out << "\nNó " << u << " marcado como PRETO (completamente explorado)" << endl;
     }
 
-    cout << fila->Size() << endl;
-    fila->PrintMemoryUsage();
-
     auto end = chrono::high_resolution_clock::now();
     chrono::duration<double, milli> duration = end - start;
 
@@ -116,10 +104,8 @@ void BFS::executar(Grafo &grafo, int inicial, int final) {
     out << "ESTATÍSTICAS DE EXECUÇÃO" << endl;
     out << "================================" << endl;
     out << "Tempo de execução: " << duration.count() << " ms" << endl;
-    out << "Pico de memória: " << fila->getPicoMemoriaUsada() << " bytes" << endl;
-    out << "Memoria Usada: " << fila->getMemoriaUsada() << " bytes" << endl;
-    out << "Memoria Total: " << fila->getMemoriaTotal() << " bytes" << endl;
-    
+    out << "Memoria Usada: " << fila->GetMemoriaTotalUsada() << " bytes" << endl;
+
     out.close();
 }
 

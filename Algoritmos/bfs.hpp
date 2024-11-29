@@ -9,6 +9,8 @@
 #include <chrono>
 #include <fstream>
 
+using namespace std;
+
 class BFS {
 public:
     static void executar(Grafo &grafo, int inicial, int final);
